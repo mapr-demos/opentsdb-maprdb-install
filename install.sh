@@ -73,9 +73,12 @@ if [[ $VERSION == 4.1.* ]]; then
 elif [[ $VERSION == 4.0.* ]]; then
   echo "MapR 4.0.x installed. Downloading asynchbase 1.5.0"
   async_link=http://repository.mapr.com/nexus/content/groups/mapr-public/org/hbase/asynchbase/1.5.0-mapr-1501/asynchbase-1.5.0-mapr-1501.jar
-else
+elif [[ $VERSION == 3.* ]]; then 
   echo "MapR 3.x installed. Downloading asynchbase 1.4.1"
   async_link=http://repository.mapr.com/nexus/content/groups/mapr-public/org/hbase/asynchbase/1.4.1-mapr-1501/asynchbase-1.4.1-mapr-1501.jar
+else
+  echo "Unknown version of MapR! This script needs to be updated!"
+  exit 1
 fi
 
 async_file=`basename "$async_link"`
