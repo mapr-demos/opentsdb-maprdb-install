@@ -61,10 +61,17 @@ done
 
 #******************************************
 # download 'asynchbase-*-mapr.jar' into OPENTSDB_HOME
+#
+# A support matrix for version of mapr and the asynchbase library - http://doc.mapr.com/display/MapR/Ecosystem+Support+Matrix
+#
 
-if [[ `cat /opt/mapr/MapRBuildVersion` == 4* ]] ;
-then
-  echo "MapR 4.x installed. Downloading asynchbase 1.5.0"
+VERSION=`cat /opt/mapr/MapRBuildVersion`
+
+if [[ $VERSION == 4.1.* ]]; then
+  echo "MapR 4.1.x installed. Downloading "
+  async_link=http://repository.mapr.com/nexus/content/groups/mapr-public/org/hbase/asynchbase/1.6.0-mapr-1503/asynchbase-1.6.0-mapr-1503.jar
+elif [[ $VERSION == 4.0.* ]]; then
+  echo "MapR 4.0.x installed. Downloading asynchbase 1.5.0"
   async_link=http://repository.mapr.com/nexus/content/groups/mapr-public/org/hbase/asynchbase/1.5.0-mapr-1501/asynchbase-1.5.0-mapr-1501.jar
 else
   echo "MapR 3.x installed. Downloading asynchbase 1.4.1"
