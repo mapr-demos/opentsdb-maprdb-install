@@ -67,8 +67,11 @@ done
 
 VERSION=`cat /opt/mapr/MapRBuildVersion`
 
-if [[ $VERSION == 4.1.* ]]; then
-  echo "MapR 4.1.x installed. Downloading "
+if [[ $VERSION == 5.* ]]; then
+  echo "MapR 5.x installed. Downloading asynchbase 1.6.0"
+  async_link=http://repository.mapr.com/nexus/content/groups/mapr-public/org/hbase/asynchbase/1.6.0-mapr-1503/asynchbase-1.6.0-mapr-1503.jar
+elif [[ $VERSION == 4.1.* ]]; then
+  echo "MapR 4.1.x installed. Downloading asynchbase 1.6.0"
   async_link=http://repository.mapr.com/nexus/content/groups/mapr-public/org/hbase/asynchbase/1.6.0-mapr-1503/asynchbase-1.6.0-mapr-1503.jar
 elif [[ $VERSION == 4.0.* ]]; then
   echo "MapR 4.0.x installed. Downloading asynchbase 1.5.0"
