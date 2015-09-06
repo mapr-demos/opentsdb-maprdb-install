@@ -90,7 +90,7 @@ Run the create tables script to create the required OpenTSDB tables in MapR-DB; 
 
 *This script sets permissions such that any user can read, write or append to the OpenTSDB tables. If you desire different permissions modify the create tables scripts as desired or use the [MapR Control System](http://doc.mapr.com/display/MapR/MapR+Control+System) to modify the permissions after running the script.*
 ```sh
-su - mapr -c ./create_tables.sh 
+su mapr -c ./create_table.sh
 ```
 
 ##Step 7
